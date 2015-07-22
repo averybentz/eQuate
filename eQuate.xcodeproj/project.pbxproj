@@ -343,6 +343,7 @@
 				INFOPLIST_FILE = eQuate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -353,6 +354,7 @@
 				INFOPLIST_FILE = eQuate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -409,6 +411,7 @@
 				E029A42A1B60201000D229ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E029A42B1B60201000D229ED /* Build configuration list for PBXNativeTarget "eQuateTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				E029A42D1B60201000D229ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
