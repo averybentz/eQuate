@@ -31,38 +31,6 @@ class ViewController: UIViewController {
         
         //Update WebView
         self.loadAddressURL()
-        
-        /*
-        //Set URL
-        //URL that will open in Chrome
-        var openInChromeURL:NSURL = NSURL(string: "chromes://google.ca" + (savedURLLabel.text)!)!
-        //URL that will open in Safari
-        var openInSafariURL:NSURL = NSURL(string: "https://" + (savedURLLabel.text)!)!
-        
-        /*//Check if chrome is installed
-        if(UIApplication.sharedApplication().canOpenURL(openInChromeURL)){
-        UIApplication.sharedApplication().openURL(openInChromeURL)
-        }
-        else{
-        UIApplication.sharedApplication().openURL(openInSafariURL)
-        @IBOutlet weak var WebView: UIWebView!
-        @IBOutlet weak var myWebView: UIWebView!
-        }*/
-        //Open in Chrome
-        UIApplication.sharedApplication().openURL(openInChromeURL)
-        @IBOutlet var WebView: UIWebView!
-        
-        
-        //Check if you can open URL in chrome
-        var MyOpenInChromeController:OpenInChromeController = OpenInChromeController()
-        if (OpenInChromeController.isChromeInstalled(MyOpenInChromeController)() == true){
-        println("Can open with chrome")
-        MyOpenInChromeController.openInChrome(NSURL(string:(savedURLLabel.text)!))
-        }
-        else{
-        println("Will not open with chrome")
-        }
-        */
     }
     
     
@@ -81,23 +49,10 @@ class ViewController: UIViewController {
         //Change URLPath to existing URL
         URLPath = myURL
         
-        /*
-        //Refresh label text via reloadME
-        //self.reloadMe()
-        */
         //Refresh WebView
         self.loadAddressURL()
         
     }
-    
-    /*
-    //Method that will get calld to reload savedURLLabel
-    func reloadMe(){
-    
-    let stringKey = NSUserDefaults.standardUserDefaults()
-    savedURLLabel.text = stringKey.stringForKey("savedURL")
-    }
-    */
     
     //Method that will load URL to WebView
     func loadAddressURL(){
