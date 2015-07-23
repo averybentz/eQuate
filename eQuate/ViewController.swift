@@ -15,16 +15,23 @@ class ViewController: UIViewController {
     //URL path that will get passed to WebView
     var URLPath = ""
     var mySavedURL = ""
+    var myURL = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let stringKey = NSUserDefaults.standardUserDefaults()
-        if let mySavedURL = stringKey.stringForKey("savedURL"){
-            
+        //Prevent crash by setting URL to permanent value if it is blank before load
+        if (NSUserDefaults.standardUserDefaults().objectForKey("savedURL") == nil){
+            //Set URL
+            myURL = "http://www.google.ca"
+            NSUserDefaults.standardUserDefaults().setObject(myURL, forKey: "savedURL")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
+        
+        let stringKey = NSUserDefaults.standardUserDefaults()
+        mySavedURL = stringKey.stringForKey("savedURL")!
         
         //Change URLPath to savedURLLabel
         URLPath = mySavedURL
@@ -40,17 +47,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saveURL(sender: AnyObject) {
-        //Create var that will hold the URL that the user provides via myURLTextField
-        let myURL = myURLTextField.text
-        //Save URL to NSUserDefaults
-        NSUserDefaults.standardUserDefaults().setObject(myURL, forKey: "savedURL")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        //If myURLTextField is not blank reset myURL
+        if (myURLTextField.text != ""){
+                //Create var that will hold the URL that the user provides via myURLTextField
+                myURL = myURLTextField.text
+            
+                //Save URL to NSUserDefaults
+            NSUserDefaults.standardUserDefaults().setObject(myURL, forKey: "savedURL")
+            NSUserDefaults.standardUserDefaults().synchronize()
         
-        //Change URLPath to existing URL
-        URLPath = myURL
+            //Change URLPath to existing URL
+            URLPath = myURL
         
-        //Refresh WebView
-        self.loadAddressURL()
+            //Refresh WebView
+            self.loadAddressURL()
+        }
+        
+            //If myURLTextField is blank set default myURL to google.ca
+        else{
+            myURL = myURLTextField.text
+        }
         
     }
     
