@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         //Prevent crash by setting URL to permanent value if it is blank before load
         if (NSUserDefaults.standardUserDefaults().objectForKey("savedURL") == nil){
             //Set URL
-            myURL = "http://www.google.ca"
+            myURL = "http://equatepos.com"
             NSUserDefaults.standardUserDefaults().setObject(myURL, forKey: "savedURL")
             NSUserDefaults.standardUserDefaults().synchronize()
         }
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         
             //If myURLTextField is blank set default myURL to google.ca
         else{
-            myURL = myURLTextField.text
+            myURL = "http://equatepos.com"
         }
         
     }
