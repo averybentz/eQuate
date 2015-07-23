@@ -157,15 +157,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf8-Uf-YDo">
-                                <rect key="frame" x="16" y="27" width="35" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf8-Uf-YDo">
+                                <rect key="frame" x="16" y="30" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Hy5-Nc-dEj"/>
+                                    <constraint firstAttribute="width" constant="35" id="wrS-8G-9da"/>
+                                </constraints>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="vXZ-lx-hvc" kind="presentation" modalTransitionStyle="flipHorizontal" id="0ov-L7-lNX"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3p2-aj-YNy">
+                                <rect key="frame" x="16" y="60" width="568" height="540"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Welcome to our eQuate mobile app! To use, simply enter your eQuate URL into the websearch bar at the top of the home screen. Be sure to save your URL by tapping the "Save" button for future references. If you would like to print a webpage (e.g. one of your receipts) tap on the "Print" button. We thank you for downloading our app and hope you enjoy:)</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3p2-aj-YNy" firstAttribute="leading" secondItem="Agm-5m-EX6" secondAttribute="leadingMargin" id="2p3-Eb-H3B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3p2-aj-YNy" secondAttribute="trailing" id="8em-pH-Ors"/>
+                            <constraint firstItem="Nf8-Uf-YDo" firstAttribute="top" secondItem="N7J-4d-lxL" secondAttribute="bottom" constant="10" id="UhZ-hl-T7s"/>
+                            <constraint firstItem="Nf8-Uf-YDo" firstAttribute="leading" secondItem="Agm-5m-EX6" secondAttribute="leadingMargin" id="Wvz-MK-D2L"/>
+                            <constraint firstItem="3p2-aj-YNy" firstAttribute="top" secondItem="Nf8-Uf-YDo" secondAttribute="bottom" id="YUa-mH-wJv"/>
+                            <constraint firstItem="wbL-CR-5Td" firstAttribute="top" secondItem="3p2-aj-YNy" secondAttribute="bottom" id="x5X-nX-8TH"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PR6-aL-6io" userLabel="First Responder" sceneMemberID="firstResponder"/>
