@@ -63,7 +63,7 @@ class ViewController: UIViewController {
             self.loadAddressURL()
         }
         
-            //If myURLTextField is blank set default myURL to google.ca
+            //If myURLTextField is blank, set default myURL to google.ca
         else{
             myURL = "http://equatepos.com"
         }
@@ -79,10 +79,12 @@ class ViewController: UIViewController {
         
     }
     
+    //Back button clicked
     @IBAction func navigateBack(sender: AnyObject) {
         self.WebView.goBack()
     }
     
+    //Print Me button clicked
     @IBAction func printMe(sender: AnyObject) {
         // 1
         let printController = UIPrintInteractionController.sharedPrintController()!
